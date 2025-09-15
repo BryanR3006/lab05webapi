@@ -12,7 +12,7 @@ namespace Lab05WebApiML.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Persona",
+                name: "ApplicationUser",
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
@@ -39,7 +39,7 @@ namespace Lab05WebApiML.Migrations
 
             migrationBuilder.CreateIndex(
                 name: "IX_Persona_NumeroIdentificacion",
-                table: "Persona",
+                table: "ApplicationUser",
                 column: "NumeroIdentificacion",
                 unique: true,
                 filter: "[NumeroIdentificacion] IS NOT NULL");
@@ -49,7 +49,7 @@ namespace Lab05WebApiML.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Persona");
+                name: "ApplicationUser");
         }
     }
 }

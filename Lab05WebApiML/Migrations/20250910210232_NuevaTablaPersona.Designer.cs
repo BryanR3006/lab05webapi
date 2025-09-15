@@ -225,7 +225,7 @@ namespace Lab05WebApiML.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("Lab05WebApiML.Models.Persona", b =>
+            modelBuilder.Entity("Lab05WebApiML.Models.ApplicationUser", b =>
                 {
                     b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
 
@@ -267,7 +267,7 @@ namespace Lab05WebApiML.Migrations
                         .IsUnique()
                         .HasFilter("[NumeroIdentificacion] IS NOT NULL");
 
-                    b.ToTable("Persona", (string)null);
+                    b.ToTable("ApplicationUser", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -321,11 +321,11 @@ namespace Lab05WebApiML.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Lab05WebApiML.Models.Persona", b =>
+            modelBuilder.Entity("Lab05WebApiML.Models.ApplicationUser", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
                         .WithOne()
-                        .HasForeignKey("Lab05WebApiML.Models.Persona", "Id")
+                        .HasForeignKey("Lab05WebApiML.Models.ApplicationUser", "Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

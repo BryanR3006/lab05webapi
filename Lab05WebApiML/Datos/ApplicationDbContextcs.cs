@@ -15,10 +15,10 @@ namespace Lab05WebApiMl.Datos
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
-            builder.Entity<Persona>()
-                .ToTable("Persona");
+            builder.Entity<ApplicationUser>()
+                .ToTable("ApplicationUser");
 
-            builder.Entity<Persona>()
+            builder.Entity<ApplicationUser>()
                 .HasIndex(u => u.NumeroIdentificacion)
                 .IsUnique();
         }

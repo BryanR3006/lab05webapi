@@ -13,22 +13,22 @@ namespace Lab05WebApiML.Controllers
     {
 
         // Campo global x El Controlador
-        private readonly UserManager<Persona> _user;
+        private readonly UserManager<ApplicationUser> _user;
 
-        public RegistroUsuarioController(UserManager<Persona> user) //Parametro 
+        public RegistroUsuarioController(UserManager<ApplicationUser> user) //Parametro 
         {
             this._user = user;
         }
 
         // POST api/<RegistroUsuarioController>
         [HttpPost]
-        public async Task<ActionResult> Post([FromBody] UsuarioRegistroDTO dto)
+        public async Task<ActionResult> Post([FromBody] RegisterDto dto)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-            var usuario = new Persona()
+            var usuario = new ApplicationUser()
             {
                 Id = dto.Id,
                 Email = dto.Email,
